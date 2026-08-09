@@ -1,0 +1,334 @@
+<title>UK Global Talent: Application Strategy for Zakhar Lanetc</title>
+<style>
+  :root {
+    --ink: #1d2b33;
+    --ink-soft: #4c5d66;
+    --paper: #fcfcfb;
+    --panel: #f0f3f2;
+    --line: #d8dfdd;
+    --accent: #0e6e6e;
+    --accent-deep: #0a5252;
+    --good: #2f7d46;
+    --good-bg: #e6f1e9;
+    --warn: #a8700d;
+    --warn-bg: #f7efdd;
+    --risk: #b0403a;
+    --risk-bg: #f8e8e6;
+    --mono: "SF Mono", "Cascadia Code", ui-monospace, Menlo, Consolas, monospace;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: Seravek, "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #dfe6e4;
+      --ink-soft: #9fb0ac;
+      --paper: #131b1e;
+      --panel: #1b262a;
+      --line: #2d3b40;
+      --accent: #4fb3ab;
+      --accent-deep: #6cc5bd;
+      --good: #6fbe85;
+      --good-bg: #1c2f23;
+      --warn: #d9a24a;
+      --warn-bg: #33290f;
+      --risk: #d97c74;
+      --risk-bg: #362020;
+    }
+  }
+  html { background: var(--paper); }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 60rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  header.doc { border-bottom: 3px solid var(--accent); padding-bottom: 1.6rem; margin-bottom: 2.2rem; }
+  .eyebrow {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 .6rem;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 600; font-size: 2.1rem;
+    line-height: 1.2; margin: 0 0 .5rem; text-wrap: balance;
+  }
+  .meta { color: var(--ink-soft); font-size: .92rem; margin: 0; }
+  h2 {
+    font-family: var(--serif); font-weight: 600; font-size: 1.42rem;
+    margin: 2.8rem 0 .9rem; line-height: 1.25; text-wrap: balance;
+  }
+  h3 { font-size: 1.02rem; font-weight: 650; margin: 1.6rem 0 .5rem; }
+  p { margin: 0 0 .9rem; max-width: 46rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.3rem; max-width: 45rem; }
+  li { margin-bottom: .45rem; }
+  a { color: var(--accent-deep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  strong { font-weight: 650; }
+
+  .verdict {
+    background: var(--panel); border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 1.4rem 1.6rem; margin: 0 0 1rem;
+  }
+  .verdict h2 { margin: 0 0 .6rem; font-size: 1.3rem; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .verdict-line {
+    font-family: var(--serif); font-size: 1.15rem; line-height: 1.45;
+    margin-bottom: .8rem;
+  }
+
+  .facts { display: flex; flex-wrap: wrap; gap: .5rem 2rem; padding: 0; margin: 1.1rem 0 0; list-style: none; }
+  .facts li { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+  .facts b { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
+
+  .tablebox { overflow-x: auto; margin: 0 0 1.2rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th {
+    text-align: left; font-family: var(--mono); font-size: .7rem;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--ink-soft);
+    font-weight: 600; padding: .5rem .8rem .5rem 0; border-bottom: 2px solid var(--line);
+  }
+  td { padding: .65rem .8rem .65rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { font-weight: 650; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  .chip {
+    display: inline-block; font-family: var(--mono); font-size: .68rem;
+    letter-spacing: .06em; text-transform: uppercase; font-weight: 600;
+    padding: .18rem .55rem; border-radius: 2px; white-space: nowrap;
+  }
+  .chip.good { color: var(--good); background: var(--good-bg); }
+  .chip.warn { color: var(--warn); background: var(--warn-bg); }
+  .chip.risk { color: var(--risk); background: var(--risk-bg); }
+  .chip.neutral { color: var(--ink-soft); background: var(--panel); border: 1px solid var(--line); }
+
+  .qa { border-top: 1px solid var(--line); }
+  .qa li { padding: .55rem 0; border-bottom: 1px solid var(--line); margin: 0; }
+  ol.qa { list-style: none; padding: 0; counter-reset: q; max-width: 46rem; }
+  ol.qa li::before {
+    counter-increment: q; content: "Q" counter(q);
+    font-family: var(--mono); font-size: .72rem; color: var(--accent);
+    font-weight: 600; margin-right: .7rem;
+  }
+
+  .note {
+    font-size: .85rem; color: var(--ink-soft); border-top: 1px solid var(--line);
+    margin-top: 3rem; padding-top: 1rem; max-width: 46rem;
+  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1rem; }
+  @media (max-width: 42rem) { .two-col { grid-template-columns: 1fr; } }
+  .col-card { background: var(--panel); border: 1px solid var(--line); padding: 1rem 1.2rem; }
+  .col-card h3 { margin-top: 0; }
+  .col-card ul { margin-bottom: 0; }
+</style>
+
+<div class="wrap">
+<header class="doc">
+  <p class="eyebrow">UK Global Talent Visa · Strategy Assessment</p>
+  <h1>Zakhar Lanetc: route, positioning, and realistic chances</h1>
+  <p class="meta">Prepared 9 August 2026, ahead of the strategy call with Elizaveta Proselkova (UK Global Talent Expert), 10 August 2026</p>
+</header>
+
+<section class="verdict">
+  <h2>The recommendation</h2>
+  <p class="verdict-line">Apply under <strong>Route 4 (peer review)</strong> through the <strong>Royal Academy of Engineering</strong>, positioned as <strong>Exceptional Promise</strong>: an early-career researcher bridging academic pore-scale science and industrial reservoir simulation, with a UK future already taking shape at Rock Flow Dynamics.</p>
+  <p>With Prof. Demyanov's letter secured and the portfolio framed around research independence and energy-transition relevance, this is a genuinely competitive application. The profile matches what Route 4 was built for, so the main work is framing, not qualification: every mandatory requirement is already met on paper.</p>
+  <ul class="facts">
+    <li><b>PhD</b> UNSW, Apr 2023 (Dean's Award)</li>
+    <li><b>11</b> journal publications</li>
+    <li><b>256</b> citations · h-index <b>9</b></li>
+    <li><b>~3.3 yrs</b> post-PhD, inside the Promise window</li>
+    <li><b>3</b> UK recommender candidates</li>
+    <li><b>PI</b> on a $5.4M ARC Research Hub (UNSW)</li>
+  </ul>
+</section>
+
+<h2>Why Route 4, and why RAEng</h2>
+<p>Four realistic doors exist into the Global Talent visa. Three of them close quickly on inspection; the fourth fits almost exactly.</p>
+<div class="tablebox">
+<table>
+  <tr><th>Route</th><th>What it requires</th><th>Fit</th><th>Assessment</th></tr>
+  <tr>
+    <td>Routes 1-3 (fast-track)</td>
+    <td>A prestigious fellowship, a UK academic appointment, or a UKRI-endorsed-funder research job</td>
+    <td><span class="chip risk">Closed</span></td>
+    <td>No UK academic post or qualifying fellowship. Not available today.</td>
+  </tr>
+  <tr>
+    <td>Tech Nation (digital tech)</td>
+    <td>Leadership in the digital technology sector: product, engineering, or entrepreneurial contribution</td>
+    <td><span class="chip warn">Weak</span></td>
+    <td>RFD is a software company, but the role is reservoir engineering support, not building the product. The evidence base (publications, thesis award, grant) is academic, and it would be argued on Tech Nation's least favoured ground.</td>
+  </tr>
+  <tr>
+    <td>Route 4 via Royal Society</td>
+    <td>Peer review; natural and medical sciences</td>
+    <td><span class="chip warn">Wrong body</span></td>
+    <td>Petroleum/reservoir engineering belongs with the engineers.</td>
+  </tr>
+  <tr>
+    <td>Route 4 via RAEng</td>
+    <td>Active researcher (academia <em>or industry</em>) with a PhD; full peer review of the research career</td>
+    <td><span class="chip good">Strong</span></td>
+    <td>PhD in engineering, sustained publication record, currently an industry researcher: the exact population this route names. Elizaveta pointing to the RAEng Route 4 page suggests she reads it the same way.</td>
+  </tr>
+</table>
+</div>
+<p>One nuance worth holding onto: Route 4 is the <em>non</em>-fast-track route. It is a complete review of the research career by working engineers in the field, which means the portfolio is judged on substance (publications, funding, originality, trajectory) rather than on checkbox prestige. That plays to this profile's strengths.</p>
+
+<h2>Talent or Promise</h2>
+<div class="two-col">
+  <div class="col-card">
+    <h3>Exceptional Promise <span class="chip good">Recommended</span></h3>
+    <ul>
+      <li>Defined as early-career with leadership <em>potential</em>. At ~3.3 years post-PhD, squarely inside the window</li>
+      <li>Requires <strong>one</strong> letter, from an eminent UK-based person familiar with the work: Prof. Demyanov</li>
+      <li>An h-index of 9 and a Dean's thesis award are <em>strong</em> for this career stage; the same numbers read as modest under Talent</li>
+      <li>Cost: settlement (ILR) after 5 years instead of 3</li>
+    </ul>
+  </div>
+  <div class="col-card">
+    <h3>Exceptional Talent <span class="chip warn">Stretch</span></h3>
+    <ul>
+      <li>Means established international leadership <em>now</em>: major prizes, keynote invitations, editorial roles, substantial funding as PI</li>
+      <li>Requires a second letter from a senior figure in a UK research/innovation organisation. Newly possible via Scott Harrison or the client executive, but the letters can't substitute for the track-record bar</li>
+      <li>Risk: reviewers benchmarking against professors and international award-winners</li>
+    </ul>
+  </div>
+</div>
+<p><strong>Ask Elizaveta:</strong> whether RAEng will consider a Talent application at Promise level if it falls short (some endorsing bodies do this, some reject outright). If downgrading is automatic, an ambitious Talent filing costs nothing; if it isn't, Promise is the safe and correct call.</p>
+
+<h2>The evidence, mapped to what RAEng actually scores</h2>
+<div class="tablebox">
+<table>
+  <tr><th>Criterion</th><th>Your evidence</th><th>Strength</th></tr>
+  <tr>
+    <td>Track record &amp; contributions</td>
+    <td>11 peer-reviewed papers (Fuel, Transport in Porous Media, Computers &amp; Geosciences among them); a coherent research programme in hybrid pore-network/continuum methods rather than scattered co-authorships; first-author on the core papers</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>Significance of publications</td>
+    <td>256 citations, h-index 9, i10-index 8 three years post-PhD; top paper (deep-learning super-resolution of carbonate CT images, 2022) at ~82 citations shows cross-disciplinary reach into ML</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>Prizes</td>
+    <td><strong>Dean's Award for Outstanding PhD Thesis (UNSW)</strong>; Global Education Program, a Russian <em>presidential</em> award literally for global talent (a narrative gift); Gazprom Certificate of Merit; fully-funded UIPA scholarship</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>Research funding awarded</td>
+    <td><strong>Partner Investigator on ARC Industrial Transformation Research Hub IH210100048</strong> (Resilient and Intelligent Infrastructure Systems, UNSW-led, $5.43M ARC funding plus industry co-funding, 2022-2027, verifiable on the ARC data portal); Chief Investigator on Russian Science Foundation grant No 22-21-00876 (~80k AUD). Two national funding bodies on two continents, one of them a live multi-million-dollar hub</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>International standing</td>
+    <td><strong>Peer reviewer for several top-tier academic journals</strong> (editors trust his judgement of others' work, a classic esteem indicator; list the journals and pull the verified record from Web of Science or ORCID); presentations at IPTC 2022 (Riyadh), Hydrogen Storage Conference 2022 (Sydney), ADIPEC 2025 co-author; collaborations across Australia; qualifications assessed and recognized by Engineers Australia as Professional Engineer, Petroleum (skills assessment, a supporting credential rather than chartership); SPE member; no invited keynotes or editorial board seats yet</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>Originality, independence, leadership</td>
+    <td>The hybrid multiscale methodology is distinctive and demonstrably his; independence post-PhD is the part reviewers will probe, so the RFD role must be framed as applied research, not support</td>
+    <td><span class="chip warn">Framing-dependent</span></td>
+  </tr>
+  <tr>
+    <td>Expected benefit to the UK</td>
+    <td>Standing invitation to RFD's UK operation from a UK-based Global Director; CCS and hydrogen-storage research directly serving UK net-zero programmes; Heriot-Watt academic connection; St Andrews alumnus</td>
+    <td><span class="chip good">Strong</span></td>
+  </tr>
+  <tr>
+    <td>Mandatory eligibility</td>
+    <td>PhD held; active researcher in industry; letter available from an eminent UK-based academic</td>
+    <td><span class="chip good">Met</span></td>
+  </tr>
+</table>
+</div>
+
+<h2>The letters: your strongest card, played in the right order</h2>
+<div class="tablebox">
+<table>
+  <tr><th>Person</th><th>Role in the application</th><th>Why</th></tr>
+  <tr>
+    <td>Prof. Vasily Demyanov</td>
+    <td><strong>The mandatory personal recommendation</strong></td>
+    <td>Professor at Heriot-Watt's Institute for GeoEnergy Engineering, leads the GeoDataScience group (machine learning and uncertainty in reservoir modelling), so he can speak with authority to both the pore-scale work <em>and</em> the deep-learning paper. Eminent, UK-based, independent of your employer. As close to ideal as this letter gets.</td>
+  </tr>
+  <tr>
+    <td>Scott Harrison</td>
+    <td>UK-benefit evidence; candidate second letter</td>
+    <td>UK-based Global Director at RFD who intends to bring you to the UK operation. His letter converts "expected benefit to the UK" from speculation into a named plan. As an employer he is not independent, so he supports rather than anchors.</td>
+  </tr>
+  <tr>
+    <td>Senior executive, UK O&amp;G client</td>
+    <td>Independent industry validation</td>
+    <td>A client attesting that your simulation work shaped real UK-relevant field decisions is evidence no academic letter can provide. If Talent is attempted, this person or Scott may satisfy the second-letter requirement; confirm with Elizaveta whether an industry executive qualifies as a "senior member of a UK research/innovation organisation".</td>
+  </tr>
+</table>
+</div>
+<p>What Demyanov's letter must do (worth briefing him explicitly): name the original contribution (hybrid pore-network/continuum coupling), attest to independence and intellectual leadership, place the work internationally, and say concretely what UK research and industry gain by your presence. A warm but generic letter is the most common way strong applications die.</p>
+
+<h2>Risks, honestly stated</h2>
+<div class="tablebox">
+<table>
+  <tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr>
+  <tr>
+    <td>"Support engineer" title</td>
+    <td><span class="chip warn">Medium</span></td>
+    <td>The CV and personal statement must recast the RFD role as applied research: CCS and CSG model development, assisted history matching, the ADIPEC 2025 paper, and the concurrent ARC Hub investigator role at UNSW. The dual identity (industry engineer + funded university investigator) is the story. Never let "support" be the operative word. One precision point: ARC "PI" means <em>Partner</em> Investigator; write it out in full so reviewers never suspect inflation to Principal Investigator.</td>
+  </tr>
+  <tr>
+    <td>Publication trajectory tapering</td>
+    <td><span class="chip good">Low</span></td>
+    <td>Largely resolved by recent developments: a new UNSW paper is submitted and under review, the ADIPEC 2025 proceedings shows continued output, and the ARC Hub investigator role (2022-2027) proves an active, funded research affiliation running alongside the RFD job. Present all three prominently.</td>
+  </tr>
+  <tr>
+    <td>Russian grant and Gazprom optics</td>
+    <td><span class="chip neutral">Low-medium</span></td>
+    <td>Legitimate career facts and valid evidence of funding and industry recognition. Present factually, anchored on the Australian and UK-facing narrative. Ask Elizaveta how RAEng reviewers have received Russian-institution evidence recently; she will have seen real cases.</td>
+  </tr>
+  <tr>
+    <td>RAEng's stringency</td>
+    <td><span class="chip warn">Medium</span></td>
+    <td>RAEng is regarded as the most demanding endorser and cannot pre-assess chances. The counter is fit: this is a research-first portfolio, not an industry CV dressed up as one. Promise-level benchmarking works in your favour.</td>
+  </tr>
+  <tr>
+    <td>CV over length</td>
+    <td><span class="chip good">Trivial</span></td>
+    <td>Current long CV is 4 pages; Route 4 caps it at 3 A4 pages. A dedicated rewrite is already on the plan.</td>
+  </tr>
+</table>
+</div>
+
+<h2>So what are the chances?</h2>
+<p>No endorsing body publishes per-route approval rates, and anyone quoting you a precise percentage is guessing. What can be said with confidence: <strong>every mandatory requirement is met</strong>, the evidence lands "strong" on seven of eight assessment dimensions, and the remaining one (independence framing) is a writing problem, not an evidence problem. The ARC Hub investigator role also directly rebuts the most likely reviewer objection, that the applicant left research for industry support work. The profile is not a borderline case being stretched to fit; it is the target population of the route.</p>
+<p>A well-prepared Promise application here should be <strong>more likely to succeed than not</strong>. The realistic failure modes are preparation failures, not profile failures: a generic recommendation letter, a CV that reads industry-support rather than researcher, or an overreach to Talent without the downgrade safety net. All three are avoidable, and all three are exactly what the coaching call should pin down. If it were rejected, Route 4 permits reapplication with a strengthened portfolio. Elizaveta specialises in precisely that scenario, but better to not need it.</p>
+
+<h2>Action plan</h2>
+<div class="tablebox">
+<table>
+  <tr><th>When</th><th>Action</th></tr>
+  <tr><td>10 Aug (call)</td><td>Resolve the open questions below; agree Promise vs Talent and the framing strategy</td></tr>
+  <tr><td>Weeks 1-2</td><td>Brief and secure Prof. Demyanov's letter (send him CV, Scholar profile, a one-page research narrative, and a bullet list of points the letter must cover). Confirm the shape of Scott's RFD UK invitation in writing.</td></tr>
+  <tr><td>Weeks 2-4</td><td>Rewrite CV to 3 pages in research-first structure; draft the Stage 1 form content: publications with full references and URLs, grants, prizes, patents</td></tr>
+  <tr><td>Weeks 4-6</td><td>Assemble, cross-review (letters, CV, and form must tell one consistent story), optional paid document review with Elizaveta</td></tr>
+  <tr><td>Weeks 6-8</td><td>Submit Stage 1. Endorsement decision typically ~5 weeks, up to 8. Visa (Stage 2) within 3 months of endorsement, ~3 weeks to decide.</td></tr>
+</table>
+</div>
+<p>Realistic end-to-end: <strong>endorsed around November-December 2026, visa in hand by early 2027</strong>, which likely dovetails with whatever timeline Scott has in mind for the UK move.</p>
+
+<h2>Questions for tomorrow's call</h2>
+<ol class="qa">
+  <li>If we file as Exceptional Talent and fall short, does RAEng consider the application at Promise level, or reject outright? Does that change your recommendation?</li>
+  <li>Does a UK industry executive (RFD Global Director, or a client company director) qualify as the "senior member of a UK research/innovation organisation" for the Talent second letter?</li>
+  <li>Are supplementary letters beyond the mandatory one(s) accepted in Route 4, and do they help or dilute?</li>
+  <li>How should the RFD "Support Reservoir Engineer" role be framed to satisfy "active researcher in industry", and how have RAEng reviewers treated similar industry applicants?</li>
+  <li>How have RAEng reviewers recently received Russian-institution evidence (RSF grant, Gazprom award)? Include, de-emphasise, or contextualise?</li>
+  <li>Should we time the application before or after Scott's formal RFD UK invitation lands, and is a written offer worth waiting for as evidence?</li>
+  <li>Does anything in this profile change your view on RAEng vs any alternative endorsing body?</li>
+  <li>What has caused the Route 4 rejections you've seen for profiles like this one?</li>
+</ol>
+
+<p class="note">Sources: RAEng and Royal Society Route 4 guidance pages, GOV.UK Global Talent guidance, Google Scholar profile (citations as of 9 Aug 2026), zakcv_long.pdf. Assessment reflects publicly available guidance. Elizaveta's case experience and any formal immigration advice supersede it where they differ.</p>
+</div>
